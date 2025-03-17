@@ -28,7 +28,7 @@ the project consist of : <br>
 2 - run this GIT command :
 
 ```
-git clone https://github.com/amrwheab/ultimate-task.git
+git clone https://github.com/amrwheab/iqra-task.git
 ```
 
 3 - Change directory to project :
