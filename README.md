@@ -34,7 +34,7 @@ git clone https://github.com/amrwheab/iqra-task.git
 3 - Change directory to project :
 
 ```
-cd ultimate-task
+cd iqra-task
 ```
 
 4 - install npm nessessary packages :
