@@ -1,59 +1,59 @@
-# IqraTask
+# Real-Time JSON dynamic forms
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+### What the project is ?
 
-## Development server
+JSON Dynamic Forms
 
-To start a local development server, run:
+### What it's goal?
 
-```bash
+create dynamic forms based on json
+
+### What the project consist of?
+
+the project consist of : <br>
+
+- One page (Home) contains all we need . <br>
+
+### What I used for project?
+
+3 - tailwind classes. <br>
+
+### What angular features that I used?
+
+4 - Change detection strategy (OnPush). <br>
+
+### How to install project locally and see it on localhost?
+
+1 - open cmd in the prefered path on your disk. <br>
+2 - run this GIT command :
+
+```
+git clone https://github.com/amrwheab/ultimate-task.git
+```
+
+3 - Change directory to project :
+
+```
+cd ultimate-task
+```
+
+4 - install npm nessessary packages :
+
+```
+npm i
+```
+
+5 - Serve the project to localhost by using this angular/cli command:
+
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Or by npm command:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+6 - After rendering the project th will be ready on localhost on port 4200, So you can go to browser and go to that link: http://localhost:4200 . <br>
+7 - Now the project is ready ! 😊
