@@ -1,0 +1,64 @@
+<form [formGroup]="formForTemplate()" class="mt-5">
+  <div class="flex gap-3 flex-wrap">
+    @for (field of formContents(); track $index) { @if (field.type !==
+    FormTypes.group && field.type !== FormTypes.array && field.type !==
+    FormTypes.select) {
+    <div class="flex flex-col gap-2">
+      <label>{{ field.label }}</label>
+      <input
+        [type]="field.type"
+        [placeholder]="field.label"
+        [formControlName]="field.name"
+        class="w-[300px] p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      />
+
+      @if (form()?.get(field.name)?.invalid) {
+      <span class="text-red-500">Validation error</span> }
+    </div>
+    } @if (field.type === FormTypes.select) {
+    <div class="flex flex-col gap-2">
+      <label>{{ field.label }}</label>
+      <select
+        [formControlName]="field.name"
+        class="w-[300px] p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+      >
+        @for (opt of field.options || []; track $index) {
+        <option [value]="opt">{{ opt }}</option>
+        }
+      </select>
+    </div>
+    } @if (field.type === FormTypes.group) {
+    <div [formGroupName]="field.name">
+      <h2 class="font-bold text-lg">{{ field.label }}</h2>
+      <app-recursive-form
+        [formContents]="field.fields || []"
+        [form]="form()?.get(field.name)"
+      />
+    </div>
+    } @if (field.type === FormTypes.array) {
+    <div [formArrayName]="field.name">
+      <h2 class="font-bold text-lg">{{ field.label }}</h2>
+      <button
+        type="button"
+        (click)="addItemToArray(field.name, field?.fields || [])"
+        class="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+      >
+        Add {{ field.label }}
+      </button>
+      @for (item of formArray(field.name); track $index) {
+      <div [formGroupName]="$index">
+        <app-recursive-form [formContents]="field.fields || []" [form]="item" />
+
+        <button
+          type="button"
+          class="mt-4 px-6 py-2 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+          (click)="removeItemFromArray(field.name, $index)"
+        >
+          Remove
+        </button>
+      </div>
+      }
+    </div>
+    } }
+  </div>
+</form>

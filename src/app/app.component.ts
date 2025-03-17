@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [DynamicFormComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   title = 'iqra-task';
